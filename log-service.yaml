@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-generator
+  labels:
+    component: log-generator
+spec:
+  type: LoadBalancer
+  selector:
+    component: log-generator #this should be my app
+  ports:
+  - name: http
+    port: 8080 #match this to wherever we want it to listen
+    protocol: TCP
+  # - name: transport
+  #   port: 9300
+  #   protocol: TCP
