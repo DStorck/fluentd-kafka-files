@@ -7,10 +7,10 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    component: log-generator #this should be my app
+    component: log-generator #this should be the name of app
   ports:
   - name: http
-    port: 8080 #match this to wherever we want it to listen
+    port: 8080 
     protocol: TCP
   # - name: transport
   #   port: 9300
