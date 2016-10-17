@@ -3,15 +3,10 @@ kind: Service
 metadata:
   name: log-generator
   labels:
-    component: log-generator
+    app: log-generator
 spec:
-  type: LoadBalancer
-  selector:
-    component: log-generator #this should be the name of app
   ports:
-  - name: http
-    port: 8080 
-    protocol: TCP
-  # - name: transport
-  #   port: 9300
-  #   protocol: TCP
+   - port: 8080
+  selector:
+    app: log-generator
+  type: LoadBalancer
